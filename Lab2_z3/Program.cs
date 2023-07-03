@@ -37,6 +37,23 @@ namespace Lab2_z3
                 Console.WriteLine("");
             }
 
+            int maxSumaKolone = 0;
+            int kolona = 0;
+            for(int i = 0; i < n; i++)
+            {
+                int sumaKolone = 0;
+                for (int j = 0; j < n; j++)
+                    sumaKolone += matrica[j, i];
+
+                if (sumaKolone > maxSumaKolone)
+                {
+                    maxSumaKolone = sumaKolone;
+                    kolona = i;
+                }
+            }
+
+
+            Console.WriteLine("\nKolona sa najvećom sumom elemenata je: {0}", kolona + 1);
         }
     }
 }
