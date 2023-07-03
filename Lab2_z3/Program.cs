@@ -33,7 +33,7 @@ namespace Lab2_z3
             for(int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
-                    Console.Write("{0}  ", matrica[i, j]);
+                    Console.Write("{0} ", matrica[i, j]);
                 Console.WriteLine("");
             }
 
@@ -42,6 +42,7 @@ namespace Lab2_z3
             int kolona = 0;
             int minSumaReda = 0;
             int red = 0;
+            int sumaNaDijagonali = 0;
 
             for(int i = 0; i < n; i++)
             {
@@ -49,6 +50,9 @@ namespace Lab2_z3
                 int sumaReda = 0;
                 for (int j = 0; j < n; j++)
                 {
+                    if (i == j)
+                        sumaNaDijagonali += matrica[i, j];
+
                     sumaKolone += matrica[j, i];
                     sumaReda += matrica[i, j];
                 }
@@ -68,7 +72,7 @@ namespace Lab2_z3
 
             Console.WriteLine("\nKolona sa najvećom sumom elemenata je: {0}", kolona + 1);
             Console.WriteLine("Red sa najmanjom sumom elemenata je: {0}", red + 1);
-
+            Console.WriteLine("Suma elemenata na dijagonali je: {0}", sumaNaDijagonali);
         }
     }
 }
